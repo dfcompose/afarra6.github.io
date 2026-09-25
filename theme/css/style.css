@@ -59,7 +59,8 @@ summary {
 }
 
 main {
-    animation: fadeInUp 1s ease-in forwards;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.25s forwards;
 }
 
 audio,
@@ -888,6 +889,7 @@ img {
 }
 
 .blog-cover {
+    opacity: 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -896,7 +898,7 @@ img {
     z-index: 5;
     background: no-repeat scroll center center/cover #000;
     animation: 0.5s ease-in forwards fadein;
-    animation: fadeInUp 1s ease-in forwards;
+    animation: fadeInUp 1s ease-in 0.5s forwards;
 }
 
 .blog-cover:after {
