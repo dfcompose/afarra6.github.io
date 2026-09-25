@@ -17,7 +17,7 @@ table {
 }
  .table-container {
     left: 0px;
-    display: grid;
+    /* display: grid; */
     padding-top: 5vh;
     /* max-width: 100%; */
     overflow-x: auto;
