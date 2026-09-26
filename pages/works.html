@@ -288,21 +288,27 @@
 function displayTableNew(tableIndex) {
   // console.log(tableIndex);
   // console.log(document.getElementById(["chamber", "solo", "large", "install", "elec"][tableIndex]));
-    var arrLength = ["chamber", "solo", "large", "install", "elec"].length;
+    var catArray = ["chamber", "solo", "large", "install", "elec"];
+    var butArray = ["chamber-button", "solo-button", "large-button", "install-button", "elec-button"];
+    
     var x = document.getElementById(["chamber", "solo", "large", "install", "elec"][tableIndex]);
     
     var y = document.getElementById(["chamber-button", "solo-button", "large-button", "install-button", "elec-button"][tableIndex]);
-    if(x.style.display === "table"){return}
-    for(var i = 0; i < arrLength; i++){
-    
+    // if(x.style.display === "table"){return}
+    for(var i = 0; i < catArray.length; i++){
     
 
 
-    if(i === tableIndex){
-    if (x.style.display != "table") {
-      x.style.display = "table";
+    
+    if (i === tableIndex) {
+      // x.style.display = "table";
+      x.classList.remove("run-anim-out")
+      x.classList.add("run-anim-in")
     } else {
-      x.style.display = "none";
+      // x.style.display = "none";
+      // x.classList.remove("run-anim-in");
+      document.getElementById(["chamber", "solo", "large", "install", "elec"][i]).classList.add("run-anim-out");
+      console.log(i);
       
     }
 
@@ -312,16 +318,45 @@ function displayTableNew(tableIndex) {
       
       y.style.background = '#ffffff'
     }
-} else {
-    document.getElementById(["chamber", "solo", "large", "install", "elec"][i]).style.display = "none";
-    document.getElementById(["chamber-button", "solo-button", "large-button", "install-button", "elec-button"][i]).style.background = '#e1e1e1'
-}
+} 
+// else {
+//     // document.getElementById(["chamber", "solo", "large", "install", "elec"][i]).style.display = "none";
+//     document.getElementById(["chamber-button", "solo-button", "large-button", "install-button", "elec-button"][i]).style.background = '#e1e1e1'
+// }
+
+for (var i = 0; i < catArray.length; i++){
+  if(i != tableIndex){
+      // document.getElementById(catArray[i]).style.display = "none";
+      document.getElementById(butArray[i]).style.background = '#E1E1E1';
+      
+
+    }
+    else {
+      // document.getElementById(catArray[i]).style.display = "table";
+      document.getElementById(butArray[i]).style.background = '#fbe19bff';
+    }
+  }
+
+
+setTimeout(() => {
+  for (var i = 0; i < catArray.length; i++){
+    if(i != tableIndex){
+      document.getElementById(catArray[i]).style.display = "none";
+      // document.getElementById(butArray[i]).style.background = '#fbe19bff';
+      
+
+    }
+    else {
+      document.getElementById(catArray[i]).style.display = "table";
+      // document.getElementById(butArray[i]).style.background = '#fbe19bff';
+    }
+  }}, 500);
 
     } 
-     
+    
   
     
-}
+// }
   
 </script>
 <script src="../theme/js/tablesort/tablesort.js"></script>

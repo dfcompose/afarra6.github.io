@@ -6,14 +6,49 @@
 
  
  } */
-  
+
+@keyframes slideIn {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px)
+  }
+}
+
+@keyframes slideOut {
+  from{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100px)
+  }
+}
+
+.run-anim-in {
+  opacity: 0;
+  animation: slideIn 0.5s ease-out 1.25s forwards;
+}
+
+.run-anim-out {
+  opacity: 1;
+  animation: slideOut 0.5s ease-in forwards;
+}
+
 table {
+    
     border-collapse: collapse;
     border-spacing: 0;
     box-sizing: border-box;
     table-layout: fixed;
     width: 75%;
     margin-left: 12.5%;
+    /* position: fixed; */
+
 }
  .table-container {
     left: 0px;
@@ -25,6 +60,7 @@ table {
     width: 100vw;
     justify-content: center;
     padding: 0 -2em;
+    transform: translate(0, 0); 
     /* margin: 0 -auto; */
     
   }
